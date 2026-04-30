@@ -1,0 +1,13 @@
+Normal_{3rd,TIR,InRe}: 
+
+    If(
+        
+        plzdtyA ∧ TIR_{2nd,InRe},
+        
+        Line(Incident_{3rd,TIR,InRe},B),
+        
+        plzdtyB ∧ TIR_{2nd,InRe},
+        
+        Line(Incident_{3rd,TIR,InRe},A),Line(A,B)
+        
+    )

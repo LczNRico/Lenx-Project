@@ -1,0 +1,92 @@
+Curve(
+  Curve(
+
+    (
+
+    x((Intersect(Segment(A,B),a)) + (m*x(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*y(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*z(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))))) + Radius (x(u) cos(t) + x(v) sin(t)),
+
+    y((Intersect(Segment(A,B),a)) + (m*x(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*y(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*z(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))))) + Radius (y(u) cos(t) + y(v) sin(t)),
+
+    z((Intersect(Segment(A,B),a)) + (m*x(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*y(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*z(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))))) + Radius (z(u) cos(t) + z(v) sin(t))
+
+    ),
+
+    t, 0, 2π
+    
+    ),
+
+    m, 0, abs(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))
+)
+
+
+
+Surface(
+
+    (
+
+    x((Intersect(Segment(A,B),a)) + (m*x(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*y(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*z(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))))) + Radius (x(u) cos(t) + x(v) sin(t)),
+
+    y((Intersect(Segment(A,B),a)) + (m*x(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*y(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*z(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))))) + Radius (y(u) cos(t) + y(v) sin(t)),
+
+    z((Intersect(Segment(A,B),a)) + (m*x(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*y(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))),m*z(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))))) + Radius (z(u) cos(t) + z(v) sin(t))
+
+    ),
+
+    t, 0, 2π, 
+
+    m, 0, abs(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))
+    
+    )
+
+
+SurfaceA=
+
+  Surface(
+
+    (
+
+    x(LensMidPoint) + m*x(UnitVector(Ray(A,B))) + sqrt(α^2-(Segment(LensMidPoint,A)+abs(m))^2) (x(u) cos(t) + x(v) sin(t)),
+
+    y(LensMidPoint) + m*y(UnitVector(Ray(A,B))) + sqrt(α^2-(Segment(LensMidPoint,A)+abs(m))^2) (y(u) cos(t) + y(v) sin(t)),
+
+    z(LensMidPoint) + m*z(UnitVector(Ray(A,B))) + sqrt(α^2-(Segment(LensMidPoint,A)+abs(m))^2) (z(u) cos(t) + z(v) sin(t))
+
+    ),
+
+    t, 0, 2π, 
+
+    m, 0, abs(Segment(Intersect(Segment(A,B),a),LensMidPoint))
+  )
+
+  Radius=sqrt(α^2-(Segment(LensMidPoint,A)+m)^2);
+
+SurfaceB=
+
+  Surface(
+
+    (
+
+    x(LensMidPoint) + m*x(UnitVector(Ray(A,B))) + sqrt(β^2-(Segment(LensMidPoint,B)+abs(m))^2) (x(u) cos(t) + x(v) sin(t)),
+
+    y(LensMidPoint) + m*y(UnitVector(Ray(A,B))) + sqrt(β^2-(Segment(LensMidPoint,B)+abs(m))^2) (y(u) cos(t) + y(v) sin(t)),
+
+    z(LensMidPoint) + m*z(UnitVector(Ray(A,B))) + sqrt(β^2-(Segment(LensMidPoint,B)+abs(m))^2) (z(u) cos(t) + z(v) sin(t))
+
+    ),
+
+    t, 0, 2π, 
+
+    m, -abs(Segment(Intersect(Segment(A,B),b),LensMidPoint)), 0
+
+  )
+
+  Radius=sqrt(β^2-(Segment(LensMidPoint,B)+m)^2);
+
+  
+Radius=sqrt(α^2-(α-m*abs(UnitVector(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))))^2)
+abs(Segment(Intersect(Segment(A,B),a),Intersect(Segment(A,B),b)))
+abs(Segment(Intersect(Segment(A,B),b),Intersect(Segment(A,B),a)))
+abs(Segment(Intersect(Segment(A,B),a),LensMidPoint))
+abs(Segment(Intersect(Segment(A,B),b),LensMidPoint))
+α
+β

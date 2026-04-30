@@ -1,0 +1,13 @@
+Incident_{3rd,TIR,InRe}=
+  if(
+
+    isdefined(Intersect(ReflectionRay,Arc_{3rd,TIR,InRe},1)),
+
+    Intersect(ReflectionRay,Arc_{3rd,TIR,InRe},1),
+
+    isdefined(Intersect(ReflectionRay,Arc_{3rd,TIR,InRe},2)),
+
+    Intersect(ReflectionRay,Arc_{3rd,TIR,InRe},2)
+
+  )
+

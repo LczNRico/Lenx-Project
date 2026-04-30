@@ -1,0 +1,74 @@
+Incident_{1st,InRe}=
+  if(
+
+    isdefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},1)),
+
+    Intersect(IncidentRay_{1},Arc_{1st,InRe},1),
+
+    isdefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},2)),
+
+    Intersect(IncidentRay_{1},Arc_{1st,InRe},2)
+    
+  )
+
+
+
+
+
+
+
+
+  
+1.
+
+Incident_{1st,InRe}=
+If(
+
+	IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},1)) ∧ !IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},2)),
+	
+	Intersect(IncidentRay_{1},Arc_{1st,InRe},1),
+	
+	IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},2)) ∧ !IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},1)),
+	
+	Intersect(IncidentRay_{1},Arc_{1st,InRe},2),
+	
+	IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},1)) ∧ IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},2)),
+
+	If(
+
+		Segment(Intersect(IncidentRay_{1},Arc_{1st,InRe},1),Light1) < Segment(Intersect(IncidentRay_{1},Arc_{1st,InRe},2),Light1),
+
+		Intersect(IncidentRay_{1},Arc_{1st,InRe},1),
+
+		Segment(Intersect(IncidentRay_{1},Arc_{1st,InRe},2),Light1) < Segment(Intersect(IncidentRay_{1},Arc_{1st,InRe},1),Light1),
+
+		Intersect(IncidentRay_{1},Arc_{1st,InRe},2)
+
+	)
+
+)
+
+
+2.
+
+Incident_{1st,InRe}=
+  If(
+
+    IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},1)),
+    
+    Intersect(IncidentRay_{1},Arc_{1st,InRe},1),
+    
+    IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},2)),
+    
+    Intersect(IncidentRay_{1},Arc_{1st,InRe},2),
+    
+    IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},1)) ∧ IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},2)) ∧ Segment(Intersect(IncidentRay_{1},Arc_{1st,InRe},1),Light1) < Segment(Intersect(IncidentRay_{1},Arc_{1st,InRe},2),Light1),
+
+    Intersect(IncidentRay_{1},Arc_{1st,InRe},1),
+
+    IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},1)) ∧ IsDefined(Intersect(IncidentRay_{1},Arc_{1st,InRe},2)) ∧ Segment(Intersect(IncidentRay_{1},Arc_{1st,InRe},2),Light1) < Segment(Intersect(IncidentRay_{1},Arc_{1st,InRe},1),Light1),
+
+    Intersect(IncidentRay_{1},Arc_{1st,InRe},2)
+
+  )
+  

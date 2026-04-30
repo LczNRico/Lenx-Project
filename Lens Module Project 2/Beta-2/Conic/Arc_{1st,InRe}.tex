@@ -1,0 +1,32 @@
+Arc_{1st,InRe}:
+  If(
+
+    plzdtyA ∧ CircularArc(B,Vertex_{1st→1},Vertex_{1st→2},InTFz_{1st,InRe})<CircularArc(B,Vertex_{1st→2},Vertex_{1st→1},InTFz_{1st,InRe}),
+    
+    CircularArc(B,Vertex_{1st→1},Vertex_{1st→2},InTFz_{1st,InRe}),
+
+    plzdtyA ∧ CircularArc(B,Vertex_{1st→2},Vertex_{1st→1},InTFz_{1st,InRe})<CircularArc(B,Vertex_{1st→1},Vertex_{1st→2},InTFz_{1st,InRe}),
+
+    CircularArc(B,Vertex_{1st→2},Vertex_{1st→1},InTFz_{1st,InRe}),
+
+    plzdtyB ∧ CircularArc(A,Vertex_{1st→1},Vertex_{1st→2},InTFz_{1st,InRe})<CircularArc(A,Vertex_{1st→2},Vertex_{1st→1},InTFz_{1st,InRe}),
+
+    CircularArc(A,Vertex_{1st→1},Vertex_{1st→2},InTFz_{1st,InRe}),
+    
+    plzdtyB ∧ CircularArc(A,Vertex_{1st→2},Vertex_{1st→1},InTFz_{1st,InRe})<CircularArc(A,Vertex_{1st→1},Vertex_{1st→2},InTFz_{1st,InRe}),
+    
+    CircularArc(A,Vertex_{1st→2},Vertex_{1st→1},InTFz_{1st,InRe})
+    
+  )
+
+  Original Version:
+  If(
+    plzdtyA,
+    
+    CircularArc(B,Vertex_{1st→1},Vertex_{1st→2},InTFz_{1st,InRe}),
+    
+    plzdtyB,
+    
+    CircularArc(A,Vertex_{1st→2},Vertex_{1st→1},InTFz_{1st,InRe})
+    
+  )

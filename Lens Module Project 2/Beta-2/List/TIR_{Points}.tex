@@ -1,0 +1,33 @@
+TIR_{Points}=
+
+    If(
+
+        plzdtyA ∧ TIR_{2nd,InRe},
+        
+        Sequence(Rotate(Incident_{2nd,InRe},n (π-2 θ_{2nd,Incident}),A,InTFz_{2nd,InRe}),n,0,δ,1),
+        
+        plzdtyB ∧ TIR_{2nd,InRe},
+        
+        Sequence(Rotate(Incident_{2nd,InRe},n (π-2 θ_{2nd,Incident}),B,InTFz_{2nd,InRe}),n,0,δ,1)
+        
+    )
+
+TIR Points=
+  if(
+    plzdtyA ∧ tir,
+
+    Sequence(
+
+    Rotate(Incident_{2nd,InRe},n (π-2 θ_{2nd,Incident}),A,InTFz_{2nd,InRe}),n,0,δ,1
+
+    ),
+
+    plzdtyB ∧ tir,
+
+    Sequence(
+
+    Rotate(Incident_{2nd,InRe},n (π-2 θ_{2nd,Incident}),B,InTFz_{2nd,InRe}),n,0,δ,1
+
+    )
+
+  )

@@ -1,0 +1,49 @@
+Rotate_{2nd,Refraction}=
+  if(
+
+    plzdtyA ∧ IncidentSegment_2 > β,
+
+    Rotate(
+
+    Reflect_{1st,Refraction},
+
+    sin^(-1)(ϕ_{2nd,Refraction})-θ_{2nd,Incident},
+
+    Incident_{2nd,InRe},
+
+    InTFz_{2nd,InRe}
+    
+    ),
+
+    plzdtyB ∧ IncidentSegment_2 > α,
+
+    Rotate(
+
+    Reflect_{1st,Refraction},
+
+    sin^(-1)(ϕ_{2nd,Refraction})-θ_{2nd,Incident},
+
+    Incident_{2nd,InRe},
+
+    InTFz_{2nd,InRe}
+    
+    ),
+
+    Rotate(
+
+    Rotate_{1st,Refraction},
+
+    sin^(-1)(ϕ_{2nd,Refraction})-θ_{2nd,Incident},
+
+    Incident_{2nd,InRe},
+
+    InTFz_{2nd,InRe}
+    
+    )
+  
+  )
+
+
+α
+β
+→

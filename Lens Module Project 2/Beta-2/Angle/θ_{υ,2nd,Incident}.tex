@@ -1,0 +1,20 @@
+θ_{υ,2nd,Incident}=
+
+  If(
+    plzdtyA ∧ IncidentSegment_{2}>β,
+
+    Angle(A,Incident_{2nd,InRe},Reflect_{1st,Refraction}),
+
+    plzdtyB ∧ IncidentSegment_{2}>α,
+
+    Angle(B,Incident_{2nd,InRe},Reflect_{1st,Refraction}),
+    
+    plzdtyA ∧ IncidentSegment_{2}<β,
+
+    Angle(A,Incident_{2nd,InRe},Reflect_{1st,Refraction}),
+
+    plzdtyB ∧ IncidentSegment_{2}<α,
+    
+    Angle(B,Incident_{2nd,InRe},Reflect_{1st,Refraction})
+
+  )

@@ -1,0 +1,11 @@
+RefractionRay_{Final}: 
+
+    If(
+        
+        TIR_{2nd,InRe},
+        
+        Ray(Incident_{3rd,TIR,InRe},Rotate_{3rd,Refraction}),
+        
+        Ray(Incident_{2nd,InRe},Rotate_{2nd,Refraction})
+        
+    )

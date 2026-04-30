@@ -1,0 +1,19 @@
+SurfaceB=
+
+    Surface(
+        (
+            x(LensMidPoint)+m x(UnitVector(Ray(A,B)))+sqrt(β^(2)-(Segment(LensMidPoint,B)+abs(m))^(2)) (x(u) cos(t)+x(v) sin(t)),
+            
+            y(LensMidPoint)+m y(UnitVector(Ray(A,B)))+sqrt(β^(2)-(Segment(LensMidPoint,B)+abs(m))^(2)) (y(u) cos(t)+y(v) sin(t)),
+            
+            z(LensMidPoint)+m z(UnitVector(Ray(A,B)))+sqrt(β^(2)-(Segment(LensMidPoint,B)+abs(m))^(2)) (z(u) cos(t)+z(v) sin(t))
+        
+        ),
+        
+        t,0,2 π,
+        
+        m,-abs(Segment(Intersect(Segment(A,B),b),LensMidPoint)),
+        
+        0
+    
+    )

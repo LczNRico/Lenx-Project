@@ -1,0 +1,18 @@
+Rotate_{1st,Refraction}=
+If(
+
+  plzdtyA,
+
+  Rotate(
+
+    B,-sin^(-1)(ϕ_{1st,Refraction}),Incident_{1st,InRe},InTFz_{1st,InRe}),
+    
+  plzdtyB,
+    
+  Rotate(
+    
+    A,-sin^(-1)(ϕ_{1st,Refraction}),Incident_{1st,InRe},InTFz_{1st,InRe}
+    
+  )
+  
+)
