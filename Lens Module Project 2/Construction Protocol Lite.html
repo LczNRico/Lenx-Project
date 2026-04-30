@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<title>GeoGebra - Construction Protocol</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"></head>
+<body>
+<h1>Lens Module 2.0 Test Version</h1>
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Definition</th>
+<th>Value</th>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#CC0000">Point A</span></td>
+<td>&nbsp;</td>
+<td><span style="color:#CC0000">A = (1.06, -0.02, 0)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#007BAE">Point B</span></td>
+<td>&nbsp;</td>
+<td><span style="color:#007BAE">B = (2.64, -0.06, 0)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Number �</td>
+<td>&nbsp;</td>
+<td>� = 1</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#D32F2F">Sphere a</span></td>
+<td><span style="color:#D32F2F">Sphere(A, &#945;)</span></td>
+<td><span style="color:#D32F2F">a: (x - 1.06)� + (y + 0.02)� + z� = 1</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Number �</td>
+<td>&nbsp;</td>
+<td>� = 13 / 10</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#0000FF">Sphere b</span></td>
+<td><span style="color:#0000FF">Sphere(B, &#946;)</span></td>
+<td><span style="color:#0000FF">b: (x - 2.64)� + (y + 0.06)� + z� = 1.69</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1565C0">Circle Lens</span></td>
+<td><span style="color:#1565C0">IntersectConic(a, b)</span></td>
+<td><span style="color:#1565C0">Lens: X = (1.63, -0.04, 0) + (0.02 cos(t), 0.82 cos(t), 0.82 sin(t))</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#008282">Point Light1</span></td>
+<td>&nbsp;</td>
+<td><span style="color:#008282">Light1 = (1.02, 1.49, 0.1)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#008282">Point Light2</span></td>
+<td>&nbsp;</td>
+<td><span style="color:#008282">Light2 = (1.57, 0.77, 0.08)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#008282"><html>Ray IncidentRay<sub><font size="-1">1</font></sub></html></span></td>
+<td><span style="color:#008282">Ray(Light1, Light2)</span></td>
+<td><span style="color:#008282">IncidentRay<sub><font size="-1">1</font></sub>: X = (1.02, 1.49, 0.1) + &#955; (0.55, -0.71, -0.02)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#098181">Plane LensMidPlane</span></td>
+<td><span style="color:#098181">Plane(Lens)</span></td>
+<td><span style="color:#098181">LensMidPlane: 1x - 0.03y = 1.63</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73">Point LensMidPoint</span></td>
+<td><span style="color:#6E6D73">Intersect(Segment(A, B), LensMidPlane)</span></td>
+<td><span style="color:#6E6D73">LensMidPoint = (1.63, -0.04, 0)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">ds</font></sub></html></span></td>
+<td><span style="color:#006400">Angle(Light1, LensMidPoint, A)</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">ds</font></sub> = 66.54&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1C1C1F">Boolean Value plzdtyA</span></td>
+<td><span style="color:#1C1C1F">&#952;<sub><font size="-1">ds</font></sub> &lt; &#960; &#x2F; 2</span></td>
+<td><span style="color:#1C1C1F">plzdtyA = true</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1C1C1F">Boolean Value plzdtyB</span></td>
+<td><span style="color:#1C1C1F">&#952;<sub><font size="-1">ds</font></sub> &gt; &#960; &#x2F; 2</span></td>
+<td><span style="color:#1C1C1F">plzdtyB = false</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#C75000"><html>Plane InTFz<sub><font size="-1">1st,InRe</font></sub></html></span></td>
+<td><span style="color:#C75000">If(plzdtyA, Plane(B, IncidentRay<sub><font size="-1">1</font></sub>), plzdtyB, Plane(A, IncidentRay<sub><font size="-1">1</font></sub>))</span></td>
+<td><span style="color:#C75000">InTFz<sub><font size="-1">1st,InRe</font></sub>: 0.03x + 0.02y + 0.31z = 0.09</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><html>Number n<sub><font size="-1">Out</font></sub></html></td>
+<td>&nbsp;</td>
+<td>n<sub><font size="-1">Out</font></sub> = 1</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><html>Number n<sub><font size="-1">Lens</font></sub></html></td>
+<td>&nbsp;</td>
+<td>n<sub><font size="-1">Lens</font></sub> = 13 &#x2F; 10</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1565C0">Line f</span></td>
+<td><span style="color:#1565C0">IntersectPath(InTFz<sub><font size="-1">1st,InRe</font></sub>, LensMidPlane)</span></td>
+<td><span style="color:#1565C0">f: X = (1.63, -0.03, 0.11) + � (0.01, 0.31, -0.02)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point Vertex<sub><font size="-1">1st&#8594;1</font></sub>(1.66, 0.78, 0.07)</html></span></td>
+<td><span style="color:#6E6D73">Intersect(f, Lens, 1)</span></td>
+<td><span style="color:#6E6D73">Vertex<sub><font size="-1">1st&#8594;1</font></sub> = (1.66, 0.78, 0.07)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point Vertex<sub><font size="-1">1st&#8594;2</font></sub>(1.61, -0.84, 0.16)</html></span></td>
+<td><span style="color:#6E6D73">Intersect(f, Lens, 2)</span></td>
+<td><span style="color:#6E6D73">Vertex<sub><font size="-1">1st&#8594;2</font></sub> = (1.61, -0.84, 0.16)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#008700"><html>Arc Arc<sub><font size="-1">1st,InRe</font></sub></html></span></td>
+<td><span style="color:#008700">If(plzdtyA &#8743; CircularArc(B, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>) &lt; CircularArc(B, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>), CircularArc(B, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>), plzdtyA &#8743; CircularArc(B, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>) &lt; CircularArc(B, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>), CircularArc(B, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>), plzdtyB &#8743; CircularArc(A, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>) &lt; CircularArc(A, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>), CircularArc(A, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>), plzdtyB &#8743; CircularArc(A, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>) &lt; CircularArc(A, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>), CircularArc(A, Vertex<sub><font size="-1">1st&#8594;2</font></sub>, Vertex<sub><font size="-1">1st&#8594;1</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>))</span></td>
+<td><span style="color:#008700">Arc<sub><font size="-1">1st,InRe</font></sub> = 1.75</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#CC0000"><html>Point Incident<sub><font size="-1">1st,InRe</font></sub>(1.61, 0.72, 0.07)</html></span></td>
+<td><span style="color:#CC0000">If(IsDefined(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 1)) &#8743; (&#172;IsDefined(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 2))), Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 1), IsDefined(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 2)) &#8743; (&#172;IsDefined(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 1))), Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 2), IsDefined(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 1)) &#8743; IsDefined(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 2)), If(Segment(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 1), Light1) &lt; Segment(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 2), Light1), Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 1), Segment(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 2), Light1) &lt; Segment(Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 1), Light1), Intersect(IncidentRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">1st,InRe</font></sub>, 2)))</span></td>
+<td><span style="color:#CC0000">Incident<sub><font size="-1">1st,InRe</font></sub> = (1.61, 0.72, 0.07)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#CC0000"><html>Line Normal<sub><font size="-1">1st,InRe</font></sub></html></span></td>
+<td><span style="color:#CC0000">If(plzdtyA, Line(Incident<sub><font size="-1">1st,InRe</font></sub>, B), plzdtyB, Line(Incident<sub><font size="-1">1st,InRe</font></sub>, A))</span></td>
+<td><span style="color:#CC0000">Normal<sub><font size="-1">1st,InRe</font></sub>: X = (1.61, 0.72, 0.07) + &#955; (1.04, -0.78, -0.07)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">1st,Incident</font></sub></html></span></td>
+<td><span style="color:#006400">Angle(IncidentRay<sub><font size="-1">1</font></sub>, Normal<sub><font size="-1">1st,InRe</font></sub>)</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">1st,Incident</font></sub> = 15.65&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><html>Number &#981;<sub><font size="-1">1st,Refraction</font></sub></html></td>
+<td>n<sub><font size="-1">Out</font></sub> &#x2F; n<sub><font size="-1">Lens</font></sub> sin(&#952;<sub><font size="-1">1st,Incident</font></sub>)</td>
+<td>&#981;<sub><font size="-1">1st,Refraction</font></sub> = 0.21</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#0000FF"><html>Point Rotate<sub><font size="-1">1st,Refraction</font></sub>(2.46, -0.26, 0.03)</html></span></td>
+<td><span style="color:#0000FF">If(plzdtyA, Rotate(B, -sin&#8315;&#185;(&#981;<sub><font size="-1">1st,Refraction</font></sub>), Incident<sub><font size="-1">1st,InRe</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>), plzdtyB, Rotate(A, -sin&#8315;&#185;(&#981;<sub><font size="-1">1st,Refraction</font></sub>), Incident<sub><font size="-1">1st,InRe</font></sub>, InTFz<sub><font size="-1">1st,InRe</font></sub>))</span></td>
+<td><span style="color:#0000FF">Rotate<sub><font size="-1">1st,Refraction</font></sub> = (2.46, -0.26, 0.03)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#993300"><html>Ray RefractionRay<sub><font size="-1">1</font></sub></html></span></td>
+<td><span style="color:#993300">Ray(Incident<sub><font size="-1">1st,InRe</font></sub>, Rotate<sub><font size="-1">1st,Refraction</font></sub>)</span></td>
+<td><span style="color:#993300">RefractionRay<sub><font size="-1">1</font></sub>: X = (1.61, 0.72, 0.07) + &#955; (0.85, -0.98, -0.04)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#008282"><html>Segment IncidentSegment<sub><font size="-1">1</font></sub></html></span></td>
+<td><span style="color:#008282">Segment(Light1, Incident<sub><font size="-1">1st,InRe</font></sub>)</span></td>
+<td><span style="color:#008282">IncidentSegment<sub><font size="-1">1</font></sub> = 0.97</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#098181"><html>Plane InTFz<sub><font size="-1">2nd,InRe</font></sub></html></span></td>
+<td><span style="color:#098181">If(plzdtyA, Plane(A, RefractionRay<sub><font size="-1">1</font></sub>), plzdtyB, Plane(B, RefractionRay<sub><font size="-1">1</font></sub>))</span></td>
+<td><span style="color:#098181">InTFz<sub><font size="-1">2nd,InRe</font></sub>: 0.04x + 0.09y - 1.17z = 0.04</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1565C0">Line g</span></td>
+<td><span style="color:#1565C0">IntersectPath(InTFz<sub><font size="-1">2nd,InRe</font></sub>, LensMidPlane)</span></td>
+<td><span style="color:#1565C0">g: X = (1.63, -0.04, 0.02) + � (-0.03, -1.17, -0.09)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point Vertex<sub><font size="-1">2nd&#8594;1</font></sub>(1.61, -0.85, -0.04)</html></span></td>
+<td><span style="color:#6E6D73">Intersect(g, Lens, 1)</span></td>
+<td><span style="color:#6E6D73">Vertex<sub><font size="-1">2nd&#8594;1</font></sub> = (1.61, -0.85, -0.04)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point Vertex<sub><font size="-1">2nd&#8594;2</font></sub>(1.66, 0.78, 0.08)</html></span></td>
+<td><span style="color:#6E6D73">Intersect(g, Lens, 2)</span></td>
+<td><span style="color:#6E6D73">Vertex<sub><font size="-1">2nd&#8594;2</font></sub> = (1.66, 0.78, 0.08)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#0076DC"><html>Arc Arc<sub><font size="-1">2nd,InRe</font></sub></html></span></td>
+<td><span style="color:#0076DC">If(plzdtyA &#8743; CircularArc(A, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>) &lt; CircularArc(A, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), CircularArc(A, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), plzdtyA &#8743; CircularArc(A, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>) &lt; CircularArc(A, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), CircularArc(A, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), plzdtyB &#8743; CircularArc(B, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>) &lt; CircularArc(B, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), CircularArc(B, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), plzdtyB &#8743; CircularArc(B, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>) &lt; CircularArc(B, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), CircularArc(B, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>))</span></td>
+<td><span style="color:#0076DC">Arc<sub><font size="-1">2nd,InRe</font></sub> = 1.91</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#167CAF"><html>Point Incident<sub><font size="-1">2nd,InRe</font></sub>(2.02, 0.25, 0.05)</html></span></td>
+<td><span style="color:#167CAF">If(IsDefined(Intersect(RefractionRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">2nd,InRe</font></sub>, 1)), Intersect(RefractionRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">2nd,InRe</font></sub>, 1), IsDefined(Intersect(RefractionRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">2nd,InRe</font></sub>, 2)), Intersect(RefractionRay<sub><font size="-1">1</font></sub>, Arc<sub><font size="-1">2nd,InRe</font></sub>, 2))</span></td>
+<td><span style="color:#167CAF">Incident<sub><font size="-1">2nd,InRe</font></sub> = (2.02, 0.25, 0.05)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#9933FF"><html>Line Normal<sub><font size="-1">2nd,InRe</font></sub></html></span></td>
+<td><span style="color:#9933FF">If(plzdtyA, Line(A, Incident<sub><font size="-1">2nd,InRe</font></sub>), plzdtyB, Line(B, Incident<sub><font size="-1">2nd,InRe</font></sub>))</span></td>
+<td><span style="color:#9933FF">Normal<sub><font size="-1">2nd,InRe</font></sub>: X = (1.06, -0.02, 0) + &#955; (0.96, 0.27, 0.05)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#3E71D7"><html>Segment IncidentSegment<sub><font size="-1">2</font></sub></html></span></td>
+<td><span style="color:#3E71D7">Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Incident<sub><font size="-1">2nd,InRe</font></sub>)</span></td>
+<td><span style="color:#3E71D7">IncidentSegment<sub><font size="-1">2</font></sub> = 0.62</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">2nd,Incident</font></sub></html></span></td>
+<td><span style="color:#006400">Angle(RefractionRay<sub><font size="-1">1</font></sub>, Normal<sub><font size="-1">2nd,InRe</font></sub>)</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">2nd,Incident</font></sub> = 64.6&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><html>Number &#981;<sub><font size="-1">2nd,Refraction</font></sub></html></td>
+<td>n<sub><font size="-1">Lens</font></sub> &#x2F; n<sub><font size="-1">Out</font></sub> sin(&#952;<sub><font size="-1">2nd,Incident</font></sub>)</td>
+<td>&#981;<sub><font size="-1">2nd,Refraction</font></sub> = 1.17</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">2nd,Refraction</font></sub></html></span></td>
+<td><span style="color:#006400">sin&#8315;&#185;(&#981;<sub><font size="-1">2nd,Refraction</font></sub>)</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">2nd,Refraction</font></sub> = ?</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#9933FF"><html>Point Rotate<sub><font size="-1">1st,Refraction,Reflection</font></sub>(1.58, 0.76, 0.08)</html></span></td>
+<td><span style="color:#9933FF">Reflect(Rotate<sub><font size="-1">1st,Refraction</font></sub>, Incident<sub><font size="-1">2nd,InRe</font></sub>)</span></td>
+<td><span style="color:#9933FF">Rotate<sub><font size="-1">1st,Refraction,Reflection</font></sub> = (1.58, 0.76, 0.08)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#008600"><html>Point Rotate<sub><font size="-1">2nd,Refraction</font></sub>(?, ?, ?)</html></span></td>
+<td><span style="color:#008600">If(plzdtyA &#8743; IncidentSegment<sub><font size="-1">2</font></sub> &gt; &#946;, Rotate(Rotate<sub><font size="-1">1st,Refraction,Reflection</font></sub>, sin&#8315;&#185;(&#981;<sub><font size="-1">2nd,Refraction</font></sub>) - &#952;<sub><font size="-1">2nd,Incident</font></sub>, Incident<sub><font size="-1">2nd,InRe</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), plzdtyB &#8743; IncidentSegment<sub><font size="-1">2</font></sub> &gt; &#945;, Rotate(Rotate<sub><font size="-1">1st,Refraction,Reflection</font></sub>, sin&#8315;&#185;(&#981;<sub><font size="-1">2nd,Refraction</font></sub>) - &#952;<sub><font size="-1">2nd,Incident</font></sub>, Incident<sub><font size="-1">2nd,InRe</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>), Rotate(Rotate<sub><font size="-1">1st,Refraction</font></sub>, sin&#8315;&#185;(&#981;<sub><font size="-1">2nd,Refraction</font></sub>) - &#952;<sub><font size="-1">2nd,Incident</font></sub>, Incident<sub><font size="-1">2nd,InRe</font></sub>, InTFz<sub><font size="-1">2nd,InRe</font></sub>))</span></td>
+<td><span style="color:#008600">Rotate<sub><font size="-1">2nd,Refraction</font></sub> = (?, ?, ?)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><html>Ray IncidentRay<sub><font size="-1">2</font></sub></html></td>
+<td>Ray(Incident<sub><font size="-1">1st,InRe</font></sub>, Incident<sub><font size="-1">2nd,InRe</font></sub>)</td>
+<td>IncidentRay<sub><font size="-1">2</font></sub>: X = (1.61, 0.72, 0.07) + &#955; (0.41, -0.47, -0.02)</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1C1C1F"><html>Boolean Value TIR<sub><font size="-1">2nd,InRe</font></sub></html></span></td>
+<td><span style="color:#1C1C1F">&#981;<sub><font size="-1">2nd,Refraction</font></sub> &#8805; 1</span></td>
+<td><span style="color:#1C1C1F">TIR<sub><font size="-1">2nd,InRe</font></sub> = true</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Number �</td>
+<td>If(TIR<sub><font size="-1">2nd,InRe</font></sub> &#8743; plzdtyA &#8743; Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>) &gt; Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>), ceil((Angle(Incident<sub><font size="-1">2nd,InRe</font></sub>, A, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>) + 0) &#x2F; (&#960; - 2&#952;<sub><font size="-1">2nd,Incident</font></sub>)), TIR<sub><font size="-1">2nd,InRe</font></sub> &#8743; plzdtyA &#8743; Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>) &gt; Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>), ceil((Angle(Incident<sub><font size="-1">2nd,InRe</font></sub>, A, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>) + 0) &#x2F; (&#960; - 2&#952;<sub><font size="-1">2nd,Incident</font></sub>)), TIR<sub><font size="-1">2nd,InRe</font></sub> &#8743; plzdtyB &#8743; Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>) &gt; Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>), ceil((Angle(Incident<sub><font size="-1">2nd,InRe</font></sub>, B, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>) + 0) &#x2F; (&#960; - 2&#952;<sub><font size="-1">2nd,Incident</font></sub>)), TIR<sub><font size="-1">2nd,InRe</font></sub> &#8743; plzdtyB &#8743; Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>) &gt; Segment(Incident<sub><font size="-1">1st,InRe</font></sub>, Vertex<sub><font size="-1">2nd&#8594;1</font></sub>), ceil((Angle(Incident<sub><font size="-1">2nd,InRe</font></sub>, B, Vertex<sub><font size="-1">2nd&#8594;2</font></sub>) + 0) &#x2F; (&#960; - 2&#952;<sub><font size="-1">2nd,Incident</font></sub>)), 0)</td>
+<td>� = 2</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Text TEXT</td>
+<td>"IncidentSegment<sub><font size="-1">2</font></sub>=" + (FormulaText(IncidentSegment<sub><font size="-1">2</font></sub>)) + ""</td>
+<td>"IncidentSegment_2=0.62"</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1C1C1F"><html>Boolean Value TIR<sub><font size="-1">1st,InRe</font></sub></html></span></td>
+<td><span style="color:#1C1C1F">&#981;<sub><font size="-1">1st,Refraction</font></sub> &#8805; 1</span></td>
+<td><span style="color:#1C1C1F">TIR<sub><font size="-1">1st,InRe</font></sub> = false</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1C1C1F">Boolean Value Crash</span></td>
+<td><span style="color:#1C1C1F">plzdtyA &#8743; plzdtyB</span></td>
+<td><span style="color:#1C1C1F">Crash = false</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">&#965;,1st,Refraction</font></sub></html></span></td>
+<td><span style="color:#006400">If(plzdtyA, Angle(B, Incident<sub><font size="-1">1st,InRe</font></sub>, Rotate<sub><font size="-1">1st,Refraction</font></sub>), plzdtyB, Angle(A, Incident<sub><font size="-1">1st,InRe</font></sub>, Rotate<sub><font size="-1">1st,Refraction</font></sub>))</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">&#965;,1st,Refraction</font></sub> = 11.97&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Number &#952;<sub><font size="-1">1st,Refraction</font></sub></html></span></td>
+<td><span style="color:#006400">sin&#8315;&#185;(&#981;<sub><font size="-1">1st,Refraction</font></sub>)</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">1st,Refraction</font></sub> = 0.21</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">&#965;,2nd,Incident</font></sub></html></span></td>
+<td><span style="color:#006400">If(plzdtyA &#8743; IncidentSegment<sub><font size="-1">2</font></sub> &gt; &#946;, Angle(A, Incident<sub><font size="-1">2nd,InRe</font></sub>, Rotate<sub><font size="-1">1st,Refraction,Reflection</font></sub>), plzdtyB &#8743; IncidentSegment<sub><font size="-1">2</font></sub> &gt; &#945;, Angle(B, Incident<sub><font size="-1">2nd,InRe</font></sub>, Rotate<sub><font size="-1">1st,Refraction,Reflection</font></sub>), plzdtyA &#8743; IncidentSegment<sub><font size="-1">2</font></sub> &lt; &#946;, Angle(A, Incident<sub><font size="-1">2nd,InRe</font></sub>, Rotate<sub><font size="-1">1st,Refraction,Reflection</font></sub>), plzdtyB &#8743; IncidentSegment<sub><font size="-1">2</font></sub> &lt; &#945;, Angle(B, Incident<sub><font size="-1">2nd,InRe</font></sub>, Rotate<sub><font size="-1">1st,Refraction,Reflection</font></sub>))</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">&#965;,2nd,Incident</font></sub> = 64.6&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Text text1</td>
+<td>"TIR&#160;&#160;<br/>
+times=" + (FormulaText(&#948;)) + ""</td>
+<td>"TIR��
+times=2"</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>List TIR<sub><font size="-1">Points</font></sub></html></span></td>
+<td><span style="color:#006400">If(plzdtyA &#8743; TIR<sub><font size="-1">2nd,InRe</font></sub>, Sequence(Rotate(Incident<sub><font size="-1">2nd,InRe</font></sub>, n (&#960; - 2&#952;<sub><font size="-1">2nd,Incident</font></sub>), A, InTFz<sub><font size="-1">2nd,InRe</font></sub>), n, 0, &#948;, 1), plzdtyB &#8743; TIR<sub><font size="-1">2nd,InRe</font></sub>, Sequence(Rotate(Incident<sub><font size="-1">2nd,InRe</font></sub>, n (&#960; - 2&#952;<sub><font size="-1">2nd,Incident</font></sub>), B, InTFz<sub><font size="-1">2nd,InRe</font></sub>), n, 0, &#948;, 1))</span></td>
+<td><span style="color:#006400">TIR<sub><font size="-1">Points</font></sub> = {(2.02, 0.25, 0.05), (1.87, -0.6, -0.01), (1.13, -1.01, -0.07)}</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#CC0000"><html>List TIR<sub><font size="-1">Segments</font></sub></html></span></td>
+<td><span style="color:#CC0000">Sequence(Segment(Element(TIR<sub><font size="-1">Points</font></sub>, m), Element(TIR<sub><font size="-1">Points</font></sub>, m + 1)), m, 1, &#948; - 1)</span></td>
+<td><span style="color:#CC0000">TIR<sub><font size="-1">Segments</font></sub> = {0.86}</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#CC0000"><html>Ray ReflectionRay<sub><font size="-1">TIR,Last</font></sub></html></span></td>
+<td><span style="color:#CC0000">If(TIR<sub><font size="-1">2nd,InRe</font></sub>, Ray(Element(TIR<sub><font size="-1">Points</font></sub>, &#948;), Element(TIR<sub><font size="-1">Points</font></sub>, &#948; + 1)), Ray(A, B))</span></td>
+<td><span style="color:#CC0000">ReflectionRay<sub><font size="-1">TIR,Last</font></sub>: X = (1.87, -0.6, -0.01) + &#955; (-0.75, -0.42, -0.06)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#098181"><html>Plane InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub></html></span></td>
+<td><span style="color:#098181">If(plzdtyA, Plane(B, ReflectionRay<sub><font size="-1">TIR,Last</font></sub>), plzdtyB, Plane(A, ReflectionRay<sub><font size="-1">TIR,Last</font></sub>))</span></td>
+<td><span style="color:#098181">InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>: 0.02x - 0.03y - 0.07z = 0.07</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1565C0">Line h</span></td>
+<td><span style="color:#1565C0">IntersectPath(InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>, LensMidPlane)</span></td>
+<td><span style="color:#1565C0">h: X = (1.63, -0.16, -0.29) + � (0, -0.07, 0.03)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point Vertex<sub><font size="-1">3rd&#8594;1</font></sub>(1.61, -0.85, 0.01)</html></span></td>
+<td><span style="color:#6E6D73">Intersect(h, Lens, 1)</span></td>
+<td><span style="color:#6E6D73">Vertex<sub><font size="-1">3rd&#8594;1</font></sub> = (1.61, -0.85, 0.01)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point Vertex<sub><font size="-1">3rd&#8594;2</font></sub>(1.65, 0.53, -0.59)</html></span></td>
+<td><span style="color:#6E6D73">Intersect(h, Lens, 2)</span></td>
+<td><span style="color:#6E6D73">Vertex<sub><font size="-1">3rd&#8594;2</font></sub> = (1.65, 0.53, -0.59)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#966E00"><html>Arc Arc<sub><font size="-1">3rd,TIR,InRe</font></sub></html></span></td>
+<td><span style="color:#966E00">If(plzdtyA &#8743; CircularArc(B, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>) &lt; CircularArc(B, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>), CircularArc(B, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>), plzdtyA &#8743; CircularArc(B, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>) &lt; CircularArc(B, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>), CircularArc(B, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>), plzdtyB &#8743; CircularArc(A, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>) &lt; CircularArc(A, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>), CircularArc(A, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>), plzdtyB &#8743; CircularArc(A, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>) &lt; CircularArc(A, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>), CircularArc(A, Vertex<sub><font size="-1">3rd&#8594;2</font></sub>, Vertex<sub><font size="-1">3rd&#8594;1</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>))</span></td>
+<td><span style="color:#966E00">Arc<sub><font size="-1">3rd,TIR,InRe</font></sub> = 1.61</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#966E00"><html>Point Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>(1.56, -0.77, -0.04)</html></span></td>
+<td><span style="color:#966E00">If(IsDefined(Intersect(ReflectionRay<sub><font size="-1">TIR,Last</font></sub>, Arc<sub><font size="-1">3rd,TIR,InRe</font></sub>, 1)), Intersect(ReflectionRay<sub><font size="-1">TIR,Last</font></sub>, Arc<sub><font size="-1">3rd,TIR,InRe</font></sub>, 1), IsDefined(Intersect(ReflectionRay<sub><font size="-1">TIR,Last</font></sub>, Arc<sub><font size="-1">3rd,TIR,InRe</font></sub>, 2)), Intersect(ReflectionRay<sub><font size="-1">TIR,Last</font></sub>, Arc<sub><font size="-1">3rd,TIR,InRe</font></sub>, 2))</span></td>
+<td><span style="color:#966E00">Incident<sub><font size="-1">3rd,TIR,InRe</font></sub> = (1.56, -0.77, -0.04)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#9933FF"><html>Line Normal<sub><font size="-1">3rd,TIR,InRe</font></sub></html></span></td>
+<td><span style="color:#9933FF">If(plzdtyA &#8743; TIR<sub><font size="-1">2nd,InRe</font></sub>, Line(Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>, B), plzdtyB &#8743; TIR<sub><font size="-1">2nd,InRe</font></sub>, Line(Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>, A), Line(A, B))</span></td>
+<td><span style="color:#9933FF">Normal<sub><font size="-1">3rd,TIR,InRe</font></sub>: X = (1.56, -0.77, -0.04) + &#955; (1.09, 0.71, 0.04)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1C1C1F"><html>Boolean Value TIR<sub><font size="-1">2nd.InRe,d</font></sub></html></span></td>
+<td><span style="color:#1C1C1F">&#981;<sub><font size="-1">2nd,Refraction</font></sub> &lt; 1</span></td>
+<td><span style="color:#1C1C1F">TIR<sub><font size="-1">2nd.InRe,d</font></sub> = false</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#966E00"><html>Point Reflect<sub><font size="-1">TIR,Last</font></sub>(1.87, -0.6, -0.01)</html></span></td>
+<td><span style="color:#966E00">Element(TIR<sub><font size="-1">Points</font></sub>, &#948;)</span></td>
+<td><span style="color:#966E00">Reflect<sub><font size="-1">TIR,Last</font></sub> = (1.87, -0.6, -0.01)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">&#965;,3rd,Incident</font></sub></html></span></td>
+<td><span style="color:#006400">If(plzdtyA, Angle(B, Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>, Reflect<sub><font size="-1">TIR,Last</font></sub>), plzdtyB, Angle(A, Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>, Reflect<sub><font size="-1">TIR,Last</font></sub>))</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">&#965;,3rd,Incident</font></sub> = 4.36&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><html>Number &#981;<sub><font size="-1">3rd,Refraction</font></sub></html></td>
+<td>n<sub><font size="-1">Lens</font></sub> &#x2F; n<sub><font size="-1">Out</font></sub> sin(&#952;<sub><font size="-1">&#965;,3rd,Incident</font></sub>)</td>
+<td>&#981;<sub><font size="-1">3rd,Refraction</font></sub> = 0.1</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">3rd,Refraction</font></sub></html></span></td>
+<td><span style="color:#006400">sin&#8315;&#185;(&#981;<sub><font size="-1">3rd,Refraction</font></sub>)</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">3rd,Refraction</font></sub> = 5.67&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point Reflect<sub><font size="-1">A,B,3rd,InRe</font></sub>(0.47, -1.48, -0.08)</html></span></td>
+<td><span style="color:#6E6D73">If(plzdtyA &#8743; TIR<sub><font size="-1">2nd,InRe</font></sub>, Reflect(B, Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>), plzdtyB &#8743; TIR<sub><font size="-1">2nd,InRe</font></sub>, Reflect(A, Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>))</span></td>
+<td><span style="color:#6E6D73">Reflect<sub><font size="-1">A,B,3rd,InRe</font></sub> = (0.47, -1.48, -0.08)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#CC0000"><html>Segment IncidentSegment<sub><font size="-1">3</font></sub></html></span></td>
+<td><span style="color:#CC0000">If(TIR<sub><font size="-1">2nd,InRe</font></sub>, Segment(Element(TIR<sub><font size="-1">Points</font></sub>, &#948;), Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>), TIR<sub><font size="-1">2nd.InRe,d</font></sub>, Segment(A, B))</span></td>
+<td><span style="color:#CC0000">IncidentSegment<sub><font size="-1">3</font></sub> = 0.36</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point &#913;uxiliary<sub><font size="-1">A,B,for visual angles</font></sub>(0.57, 1.5, 0.15)</html></span></td>
+<td><span style="color:#6E6D73">If(plzdtyA, Reflect(B, Incident<sub><font size="-1">1st,InRe</font></sub>), plzdtyB, Reflect(A, Incident<sub><font size="-1">1st,InRe</font></sub>))</span></td>
+<td><span style="color:#6E6D73">&#913;uxiliary<sub><font size="-1">A,B,for visual angles</font></sub> = (0.57, 1.5, 0.15)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">&#965;,1st,Incident</font></sub></html></span></td>
+<td><span style="color:#006400">If(plzdtyA, Angle(Light1, Incident<sub><font size="-1">1st,InRe</font></sub>, &#913;uxiliary<sub><font size="-1">A,B,for visual angles</font></sub>), plzdtyB, Angle(Light1, Incident<sub><font size="-1">1st,InRe</font></sub>, &#913;uxiliary<sub><font size="-1">A,B,for visual angles</font></sub>))</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">&#965;,1st,Incident</font></sub> = 15.65&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">&#965;,2nd,Refraction</font></sub></html></span></td>
+<td><span style="color:#006400">If(plzdtyA, Angle(Rotate<sub><font size="-1">2nd,Refraction</font></sub>, Incident<sub><font size="-1">2nd,InRe</font></sub>, &#913;uxiliary<sub><font size="-1">A,B,for visual angles</font></sub>), plzdtyB, Angle(Rotate<sub><font size="-1">2nd,Refraction</font></sub>, Incident<sub><font size="-1">2nd,InRe</font></sub>, &#913;uxiliary<sub><font size="-1">A,B,for visual angles</font></sub>))</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">&#965;,2nd,Refraction</font></sub> = ?</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>List TIR<sub><font size="-1">StandredLine</font></sub></html></span></td>
+<td><span style="color:#006400">If(plzdtyA &#8743; TIR<sub><font size="-1">2nd,InRe</font></sub>, Sequence(Line(A, Element(TIR<sub><font size="-1">Points</font></sub>, a)), a, 1, &#948;), plzdtyB &#8743; TIR<sub><font size="-1">2nd,InRe</font></sub>, Sequence(Line(B, Element(TIR<sub><font size="-1">Points</font></sub>, a)), a, 1, &#948;, 1))</span></td>
+<td><span style="color:#006400">TIR<sub><font size="-1">StandredLine</font></sub> = {X = (1.06, -0.02, 0) + &#955; (0.96, 0.27, 0.05), X = (1.06, -0.02, 0) + &#955; (0.82, -0.58, -0.01)}</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Boolean Value Bd1</td>
+<td>IncidentSegment<sub><font size="-1">2</font></sub> &gt; &#946;</td>
+<td>Bd1 = false</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#1C1C1F">Boolean Value Bd2</span></td>
+<td><span style="color:#1C1C1F">IncidentSegment<sub><font size="-1">2</font></sub> &gt; &#945;</span></td>
+<td><span style="color:#1C1C1F">Bd2 = false</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73"><html>Point Rotate<sub><font size="-1">3rd,Refraction</font></sub>(0.41, -1.38, -0.14)</html></span></td>
+<td><span style="color:#6E6D73">Rotate(Reflect<sub><font size="-1">A,B,3rd,InRe</font></sub>, sin&#8315;&#185;(&#981;<sub><font size="-1">3rd,Refraction</font></sub>), Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>, InTFz<sub><font size="-1">3rd,TIR,InRe</font></sub>)</span></td>
+<td><span style="color:#6E6D73">Rotate<sub><font size="-1">3rd,Refraction</font></sub> = (0.41, -1.38, -0.14)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#C75000"><html>Ray RefractionRay<sub><font size="-1">Final</font></sub></html></span></td>
+<td><span style="color:#C75000">If(TIR<sub><font size="-1">2nd,InRe</font></sub>, Ray(Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>, Rotate<sub><font size="-1">3rd,Refraction</font></sub>), Ray(Incident<sub><font size="-1">2nd,InRe</font></sub>, Rotate<sub><font size="-1">2nd,Refraction</font></sub>))</span></td>
+<td><span style="color:#C75000">RefractionRay<sub><font size="-1">Final</font></sub>: X = (1.56, -0.77, -0.04) + &#955; (-1.14, -0.61, -0.1)</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#006400"><html>Angle &#952;<sub><font size="-1">&#965;,3rd,Refraction</font></sub></html></span></td>
+<td><span style="color:#006400">Angle(Reflect<sub><font size="-1">A,B,3rd,InRe</font></sub>, Incident<sub><font size="-1">3rd,TIR,InRe</font></sub>, Rotate<sub><font size="-1">3rd,Refraction</font></sub>)</span></td>
+<td><span style="color:#006400">&#952;<sub><font size="-1">&#965;,3rd,Refraction</font></sub> = 5.67&#176;</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Segment MirrowLength</td>
+<td>Segment(Intersect(Segment(A, B), a), Intersect(Segment(A, B), b))</td>
+<td>MirrowLength = 0.71</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Vector u</td>
+<td>UnitVector(Segment(Intersect(Segment(A, B), a), Intersect(Segment(A, B), b))) &#8855; UnitVector(Plane(A, B, Light1))</td>
+<td>u = (0.03, 1, 0.07)</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td>Vector v</td>
+<td>UnitVector(Segment(Intersect(Segment(A, B), a), Intersect(Segment(A, B), b))) &#8855; (UnitVector(Segment(Intersect(Segment(A, B), a), Intersect(Segment(A, B), b))) &#8855; UnitVector(Plane(A, B, Light1)))</td>
+<td>v = (0, 0.07, -1)</td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6557D2">Surface SurfaceA</span></td>
+<td><span style="color:#6557D2">Surface((x(LensMidPoint) + m x(UnitVector(Ray(A, B))) + sqrt(&#945;&#178; - (Segment(LensMidPoint, A) + abs(m))&#178;) (x(u) cos(t) + x(v) sin(t)), y(LensMidPoint) + m y(UnitVector(Ray(A, B))) + sqrt(&#945;&#178; - (Segment(LensMidPoint, A) + abs(m))&#178;) (y(u) cos(t) + y(v) sin(t)), z(LensMidPoint) + m z(UnitVector(Ray(A, B))) + sqrt(&#945;&#178; - (Segment(LensMidPoint, A) + abs(m))&#178;) (z(u) cos(t) + z(v) sin(t))), t, 0, 2&#960;, m, 0, abs(Segment(Intersect(Segment(A, B), a), LensMidPoint)))</span></td>
+<td><span style="color:#6557D2">SurfaceA(t,m) = (1.63 + m * 1 + (1� - (0.58 + abs(m))�) (0.03 cos(t) + 0 sin(t)), -0.04 + m (-0.03) + (1� - (0.58 + abs(m))�) (1 cos(t) + 0.07 sin(t)), 0 + m * 0 + (1� - (0.58 + abs(m))�) (0.07 cos(t) - 1 sin(t)))</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#CC0000">Surface SurfaceB</span></td>
+<td><span style="color:#CC0000">Surface((x(LensMidPoint) + m x(UnitVector(Ray(A, B))) + sqrt(&#946;&#178; - (Segment(LensMidPoint, B) + abs(m))&#178;) (x(u) cos(t) + x(v) sin(t)), y(LensMidPoint) + m y(UnitVector(Ray(A, B))) + sqrt(&#946;&#178; - (Segment(LensMidPoint, B) + abs(m))&#178;) (y(u) cos(t) + y(v) sin(t)), z(LensMidPoint) + m z(UnitVector(Ray(A, B))) + sqrt(&#946;&#178; - (Segment(LensMidPoint, B) + abs(m))&#178;) (z(u) cos(t) + z(v) sin(t))), t, 0, 2&#960;, m, -abs(Segment(Intersect(Segment(A, B), b), LensMidPoint)), 0)</span></td>
+<td><span style="color:#CC0000">SurfaceB(t,m) = (1.63 + m * 1 + ((13 / 10)� - (1.01 + abs(m))�) (0.03 cos(t) + 0 sin(t)), -0.04 + m (-0.03) + ((13 / 10)� - (1.01 + abs(m))�) (1 cos(t) + 0.07 sin(t)), 0 + m * 0 + ((13 / 10)� - (1.01 + abs(m))�) (0.07 cos(t) - 1 sin(t)))</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#098181">Plane eq1</span></td>
+<td>&nbsp;</td>
+<td><span style="color:#098181">eq1: x - 0.03y = 0</span></td>
+</tr>
+<tr style='vertical-align:baseline;'>
+<td><span style="color:#6E6D73">Point C</span></td>
+<td><span style="color:#6E6D73">Intersect(RefractionRay<sub><font size="-1">Final</font></sub>, eq1)</span></td>
+<td><span style="color:#6E6D73">C = (-0.05, -1.63, -0.18)</span></td>
+</tr>
+</table>
+Created with <a href="https://www.geogebra.org/" target="_blank" >GeoGebra</a>
+<!-- Base64 string so that this file can be opened in GeoGebra with File -> Open -->
+<applet width='1' height='1' code='' style="display:none">
+<param name="ggbBase64" value="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">
+</applet>
+</body>
+</html>
